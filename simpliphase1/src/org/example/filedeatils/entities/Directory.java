@@ -9,7 +9,7 @@ import java.nio.file.Path;
 
 public class Directory {
 
-   public static final String name = "C:\\Users\\harsh\\eclipse-workspace\\simpliphase1\\src\\main\\director\\";
+   public static final String name = "C:\\Users\\harsh\\git\\Phase1\\simpliphase1\\src\\main\\director\\";
    //File name= new File("C:\\Users\\harsh\\eclipse-workspace\\simpliphase1\\src\\main\\director\\");
    //TODO: Possibly use a HashMap? Too complex for now.
    
@@ -35,15 +35,23 @@ public class Directory {
         
         
     	files.clear();
+    	try {
+    	
     	for (int i = 0; i < directoryFiles.length; i++) {
     		if (directoryFiles[i].isFile()) {
     			files.add(directoryFiles[i]);
     		}
-    	}
+    
     	
     	Collections.sort(files);
-    	
-    	return files;
+    	}
+    	}
+    	catch(Exception e) {
+    		System.out.println("there is no file");
+    		
+    	}
+		return files;
+		
     }
 
     public ArrayList<File> getFiles() {
